@@ -89,16 +89,16 @@ $Comp
 L Connector_Generic:Conn_01x02 J1
 U 1 1 60D2F53E
 P 7450 2550
-F 0 "J1" H 7530 2542 50  0000 L CNN
+F 0 "J1" H 7550 2550 50  0000 L CNN
 F 1 "Conn_01x02" H 7530 2451 50  0000 L CNN
 F 2 "my-kicad-footprints:Terminal_9.52mm_1x02_1714971" H 7450 2550 50  0001 C CNN
 F 3 "~" H 7450 2550 50  0001 C CNN
 	1    7450 2550
 	-1   0    0    -1  
 $EndComp
-Text Label 7650 2550 0    50   ~ 0
-PowerIn
 Text Label 7650 2650 0    50   ~ 0
+PowerIn
+Text Label 7650 2550 0    50   ~ 0
 PowerOut
 $Comp
 L my-kicad-symbols:Grove-I2C-connector J2
@@ -154,7 +154,7 @@ Wire Wire Line
 Wire Wire Line
 	6150 3150 6250 3150
 Text Label 6500 2950 0    50   ~ 0
-PowerOut
+PowerSense
 Wire Wire Line
 	6500 2950 6300 2950
 Connection ~ 6300 2950
@@ -190,7 +190,7 @@ F 3 "~" H 6400 3900 50  0001 C CNN
 $EndComp
 Text Label 6200 3900 2    50   ~ 0
 Gate
-Text Label 6650 4100 0    50   ~ 0
+Text Label 6650 4500 0    50   ~ 0
 PowerOut
 Wire Wire Line
 	6650 4100 6500 4100
@@ -198,4 +198,33 @@ Text Label 6650 3700 0    50   ~ 0
 PowerIn
 Wire Wire Line
 	6650 3700 6500 3700
+$Comp
+L Connector_Generic:Conn_01x02 J3
+U 1 1 61133E0A
+P 7450 2550
+F 0 "J3" H 7550 2650 50  0000 L CNN
+F 1 "Conn_01x02" H 7530 2451 50  0000 L CNN
+F 2 "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal" H 7450 2550 50  0001 C CNN
+F 3 "~" H 7450 2550 50  0001 C CNN
+	1    7450 2550
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:Q_NMOS_SGD Q2
+U 1 1 6135776B
+P 6400 4300
+F 0 "Q2" H 6604 4346 50  0000 L CNN
+F 1 "Q_NMOS_SGD" H 6604 4255 50  0000 L CNN
+F 2 "my-kicad-footprints:DFN5" H 6600 4400 50  0001 C CNN
+F 3 "~" H 6400 4300 50  0001 C CNN
+	1    6400 4300
+	1    0    0    1   
+$EndComp
+Connection ~ 6500 4100
+Wire Wire Line
+	6200 3900 6200 4300
+Wire Wire Line
+	6650 4500 6500 4500
+Text Label 6650 4100 0    50   ~ 0
+PowerSense
 $EndSCHEMATC
